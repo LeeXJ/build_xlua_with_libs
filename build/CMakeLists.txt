@@ -54,14 +54,17 @@ set (THIRDPART_SRC ${THIRDPART_SRC} ${RAPIDJSON_SRC})
 #end lua-rapidjson
 
 #begin lsqlite3
-set (SQLITE_SRC lsqlite3_v096/lsqlite3.c)
+set (SQLITE_SRC 
+    lsqlite3/lsqlite3.c
+    lsqlite3/sqlite3.c
+    )
 set_property(
 	SOURCE ${SQLITE_SRC}
 	APPEND
 	PROPERTY COMPILE_DEFINITIONS
 	LUA_LIB
 )
-list(APPEND THIRDPART_INC  lsqlite3_v096)
+list(APPEND THIRDPART_INC  lsqlite3)
 set (THIRDPART_SRC ${THIRDPART_SRC} ${SQLITE_SRC})
 #end lsqlite3
 
